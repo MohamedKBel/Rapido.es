@@ -48,7 +48,7 @@
                             @csrf
                         </form>
                         <a id="logoutBtn" class="nav-link" href="#">Salir</a>
-                        <button></button>
+                        <a type="submit" href="#"class="btn btn-info">Nuevo anuncio</a>
                     </li>
                 @endguest
             </ul>

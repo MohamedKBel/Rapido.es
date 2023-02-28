@@ -33,7 +33,7 @@
          
          @livewireStyles 
          @vite(['resources/css/app.css']) 
-         {{$style ?? '}} 
+         {{$style ?? ''}} 
         
 </head> 
 <body> 
