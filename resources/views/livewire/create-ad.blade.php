@@ -17,9 +17,15 @@
             </div> 
         </div> 
     </div> 
+
+    
+    <div>
+    <h1>Create new AD </h1>
+    </div>
+    
     
     <div> 
-    <form wire: submit.prevent="store"> 
+        <form wire: submit.prevent="store"> 
         @csrf 
         
         <div class="mb-3"> 
@@ -42,7 +48,7 @@
         </div> 
 
     </form> 
-    </div>
+  </div>
 
 </x-layout>
 
