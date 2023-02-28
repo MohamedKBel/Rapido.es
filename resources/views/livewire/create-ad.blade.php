@@ -1,6 +1,3 @@
-<div>
-    {{-- Care about people's approval and you eill be their prisoner. --}}
-</div>
 
 <x-layout> 
 <x-slot name='title'>Rapido Vende algo interesante</x-slot> 
@@ -19,12 +16,9 @@
                 </div> 
             </div> 
         </div> 
-    </div>  
- </x-layout>
-
-
-
- <div> 
+    </div> 
+    
+    <div> 
     <form wire: submit.prevent="store"> 
         @csrf 
         
@@ -48,4 +42,8 @@
         </div> 
 
     </form> 
-</div>
+    </div>
+
+ </x-layout>
+
+
