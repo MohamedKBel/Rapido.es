@@ -34,7 +34,7 @@
                 @guest
                     @if (Route::has ('login'))
                     <li class="nav-item">
-                        <a class="nav-link" href=" 'login')}}"><span>Entrar</span></a>
+                        <a class="nav-link" href="{{route('login')}}"><span>Entrar</span></a>
                     </li>
                     @endif
                     @if (Route::has('register'))
@@ -48,13 +48,14 @@
                             @csrf
                         </form>
                         <a id="logoutBtn" class="nav-link" href="#">Salir</a>
+                        <button></button>
                     </li>
                 @endguest
             </ul>
-            <form class="d-flex" role="search">
+            <!--<form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            </form> -->
         </div>
     </div>
 </nav>

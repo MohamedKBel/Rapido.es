@@ -1,4 +1,4 @@
-<x-loyout>
+<x-layout>
     <x-slot name="title">Rapido - Register </x-slot>
     <!-- ======= REGISTER ======= -->
     <div class="container-fluid bg-accent vh-100">
@@ -58,5 +58,5 @@
                 </div>
             </div>
         </div>
-        </section>
-        </x-layout>
+    </section>
+</x-layout>
