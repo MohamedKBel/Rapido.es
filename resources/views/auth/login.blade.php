@@ -19,7 +19,7 @@
                 <form action="/login" method="POST" role="form" class="form-control"> 
                     @csrf
                     <!--Email -->
-                    <div class="space-around my-2"> <input type="email" name="email" id="email"class="form-contro 73 1 forms_field-input" placeholder="Tu correo" data-rule="minlen:4" data-msg="Please 24 enter at least 4 chars">
+                    <div class="space-around my-2"> <input type="email" name="email" id="email"class="form-control forms_field-input" placeholder="Tu correo" data-rule="minlen:4" data-msg="Please 24 enter at least 4 chars">
                         <div class="validate"></div>
                     </div>
                     <!--Password -->
