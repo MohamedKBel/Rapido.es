@@ -9,6 +9,5 @@ class Ad extends Model
 {
     
     protected $fillable = ['title','body','price'];
-    
     use HasFactory;
 }
