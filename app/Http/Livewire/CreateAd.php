@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 use App\Models\Ad;
+use App\Models\Category;
 
 use Livewire\Component;
 
@@ -10,10 +11,12 @@ class CreateAd extends Component
     public $title;
     public $body;
     public $price;
+    public $category;
 
     protected $rules = [
         'title' => 'riquired|min:4',
         'body' => 'required|min:8',
+        'category' => 'required',
         'price' => 'required|numeric',
     ];
     protected $messages = [
@@ -24,11 +27,13 @@ class CreateAd extends Component
     
     public function store()
     {
-    Ad::create([
-        'title'=>$this->title,
-        'body'=>$this->body,
-        'price'=>$this->price,
-    ]);
+        $category = Category::find($this->category);
+        $category->ads()->create([
+            'title'=>$this->title,
+            'body'=>$this->body,
+            'price'=>$this->price,
+        ]);
+
         session()->flash('message','Anuncio Creado con éxito');
         $this->cleanForm();
 
@@ -42,6 +47,7 @@ class CreateAd extends Component
     {
         $this->title = "";
         $this->body = "";
+        $this->category = "";
         $this->price = "";
 
 
