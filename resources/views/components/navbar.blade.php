@@ -47,10 +47,10 @@
                         <form id="logoutForm" action="{{ route('logout')}}" method="POST">
                             @csrf
                         </form>
-                        <a id="logoutBtn" class="nav-link" href="#">Salir</a>
+                        <a id="logoutBtn" class="nav-link" href="{{ route('logout')}}">Salir</a>
                     </li>
                     <li>
-                        <a type="submit" href="{{ route('ad.create')}}"class="btn">Nuevo anuncio</a>
+                        <a href="{{ route('ad.create')}}"class="btn">Nuevo anuncio</a>
                     </li>
                 @endguest
             </ul>
