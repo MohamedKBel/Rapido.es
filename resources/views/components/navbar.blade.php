@@ -48,7 +48,9 @@
                             @csrf
                         </form>
                         <a id="logoutBtn" class="nav-link" href="#">Salir</a>
-                        <a type="submit" href="#"class="btn btn-info">Nuevo anuncio</a>
+                    </li>
+                    <li>
+                        <a type="submit" href="{{ route('ad.create')}}"class="btn">Nuevo anuncio</a>
                     </li>
                 @endguest
             </ul>
