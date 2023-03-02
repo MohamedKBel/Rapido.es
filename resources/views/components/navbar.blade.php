@@ -17,8 +17,7 @@
                     <a class="nav-link active" href="#">Donde estamos</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Categorias
                     </a>
                     <ul class="dropdown-menu">
@@ -43,12 +42,12 @@
                     </li>
                     @endif
                 @else
-                    <li class="nav-item">
-                        <form id="logoutForm" action="{{ route('logout')}}" method="POST">
-                            @csrf
-                        </form>
-                        <a id="logoutBtn" class="nav-link" href="{{ route('logout')}}">Salir</a>
-                    </li>
+                <li class="nav-item">
+                    <form id="logoutForm" action="{{route('logout')}}" method="POST">
+                        @csrf
+                    </form>
+                    <a id="logoutBtn" class="nav-link" href="#">Salir</a>
+                </li>
                     <li>
                         <a href="{{ route('ad.create')}}"class="btn">Nuevo anuncio</a>
                     </li>
