@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdController;
+use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
 
 /*
