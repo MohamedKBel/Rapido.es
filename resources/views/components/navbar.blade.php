@@ -29,7 +29,6 @@
                         <li><a class="dropdown-item" href="#">Electrodomesticos</a></li>
                     </ul>
                 </li>
-
                 @guest
                     @if (Route::has ('login'))
                     <li class="nav-item">
@@ -48,10 +47,11 @@
                     </form>
                     <a id="logoutBtn" class="nav-link" href="#">Salir</a>
                 </li>
+                @endguest
                     <li>
                         <a href="{{ route('ad.create')}}"class="btn">Nuevo anuncio</a>
                     </li>
-                @endguest
+                
             </ul>
             <!--<form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
