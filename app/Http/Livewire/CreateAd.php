@@ -15,7 +15,7 @@ class CreateAd extends Component
     public $category;
 
     protected $rules = [
-        'title' => 'riquired|min:4',
+        'title' => 'required|min:4',
         'body' => 'required|min:8',
         'category' => 'required',
         'price' => 'required|numeric',
