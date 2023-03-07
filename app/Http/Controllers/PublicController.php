@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Ad;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class PublicController extends Controller
@@ -13,9 +14,13 @@ class PublicController extends Controller
     }
 
     public function adsByCatagory(Category $category){
-        $ads = $category->ads()->get();
+        $ads = $category->ads()->latest()->get();
         return view('ad.by-category',compact ('category','ads'));
     }
 
+    public function show(Ad $ad)
+    {
+        return view("ads.show", compact('ad'));
+    }
 
 }
