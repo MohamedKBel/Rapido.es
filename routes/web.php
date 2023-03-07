@@ -18,5 +18,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[PublicController::class,'index'])->name('home');
 Route::get('/ad/create',[AdController::class,'create'])->name('ad.create');
-Route::get('/category/{category}/ads',[AdController::class,'asdByCategory'])->name('category.ads');
+Route::get('/category/{category:name}/ads',[AdController::class,'asdByCategory'])->name('category.ads');
 
