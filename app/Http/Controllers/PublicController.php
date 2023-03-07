@@ -13,14 +13,14 @@ class PublicController extends Controller
         return view('welcome',compact('ads'));
     }
 
-    public function adsByCatagory(Category $category){
+    public function adsByCategory(Category $category){
         $ads = $category->ads()->latest()->get();
         return view('ad.by-category',compact ('category','ads'));
     }
 
     public function show(Ad $ad)
     {
-        return view("ads.show", compact('ad'));
+        return view("ad.show", compact('ad'));
     }
 
 }

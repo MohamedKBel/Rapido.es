@@ -47,7 +47,7 @@
                 </li>
                 @endguest
                     <li>
-                        <a href="{{ route('ad.create')}}"class="btn">Nuevo anuncio</a>
+                        <a href="{{ route('ads.create')}}"class="btn">Nuevo anuncio</a>
                     </li>
                 
             </ul>
