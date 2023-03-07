@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', function (){
-    return view('welcome');
-})->name('home');
 
+
+Route::get('/',[PublicController::class,'index'])->name('home');
 Route::get('/ad/create',[AdController::class,'create'])->name('ad.create');
+
