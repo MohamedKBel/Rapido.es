@@ -1,9 +1,8 @@
 <x-layout>
-    <x-slot name='title'>Rapido -{{$category->name}}ads</x-slot>
+    <x-slot name='title'>Rapido -ads</x-slot>
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1>Anuncios por categoría: {{$category->name}}</h1>
             </div>
         </div>
         <div class="row">
@@ -30,8 +29,6 @@
                 </div>
             @empty
                 <div class="col-12">
-                    <h2>Uyy.. parece que no hay nada de esta categoría</h2>
-                    <a href="{{route('ads.create')}}" class="btn btn-success"></a> o <a href="{{route('home')}}" class="btn btn-primary">Vuelve a la home</a>
                 </div>
             @endforelse
         </div>
