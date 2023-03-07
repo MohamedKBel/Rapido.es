@@ -1,9 +1,9 @@
 <x-layout>
-    <x-slot name='title'>Rapido -{{$category->name}}ads</x-slot>
+    <x-slot name='title'>Rapido</x-slot>
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1>Anuncios por categoría: {{$category->name}}</h1>
+                
             </div>
         </div>
         <div class="row">
