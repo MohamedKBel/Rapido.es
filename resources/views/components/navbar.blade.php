@@ -22,7 +22,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach ($categories as $category )
-                            <li><a href="{{route('category.ads',$category)}}" class="dropdown-item">{{$category->name}}</a></li>
+                            <li><a class="dropdown-item" href="{{route('category.ads',$category)}}" >{{$category->name}}</a></li>
                         @endforeach
                     </ul>
                 </li>
@@ -37,18 +37,34 @@
                         <a class="nav-link" href="{{route( 'register')}}"><span>Registrar</span></a>
                     </li>
                     @endif
-                @else
-                <li class="nav-item">
-                    <form id="logoutForm" action="{{route('logout')}}" method="POST">
-                        @csrf
-                    </form>
-                    <a id="logoutBtn" class="nav-link" href="#">Salir</a>
-                </li>
+                    @else
+                    <li class="nav-item">
+                        <li>
+                            <a href="{{ route('ads.create')}}"class="btn">Nuevo anuncio</a>
+                        </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-target="dropdown" aria-expanded="false">
+                        {{Auth::user()->name}}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        @if (Auth::user()->is_revisor)
+                        <li>
+                            <a class="dropdown-item" href="{{ route('revisor.home') }}">
+                                Revisor
+                                <span class="badge rounded-pill bg-danger">
+                                    21
+                                </span>
+                            </a>
+                        </li>
+                        @endif
+                        <li>
+                            <form id="logoutForm" action="{{route('logout')}}" method="POST">
+                                @csrf
+                            </form>
+                            <a id="logoutBtn" class="dropdown-item" href="#">Salir</a>
+                        </li>
+                    </ul>
                 @endguest
-                    <li>
-                        <a href="{{ route('ads.create')}}"class="btn">Nuevo anuncio</a>
-                    </li>
-                
             </ul>
             <!--<form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
