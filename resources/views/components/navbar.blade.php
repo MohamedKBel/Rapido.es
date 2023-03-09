@@ -52,7 +52,7 @@
                             <a class="dropdown-item" href="{{ route('revisor.home') }}">
                                 Revisor
                                 <span class="badge rounded-pill bg-danger">
-                                    21
+                                    {{\App\Models\Ad::ToBeRevisionedCount() }}
                                 </span>
                             </a>
                         </li>
@@ -64,12 +64,9 @@
                             <a id="logoutBtn" class="dropdown-item" href="#">Salir</a>
                         </li>
                     </ul>
+                </li>
                 @endguest
             </ul>
-            <!--<form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form> -->
         </div>
     </div>
 </nav>
