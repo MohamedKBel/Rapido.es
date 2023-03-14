@@ -6,23 +6,27 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
+    /** 
      * Run the migrations.
+     * 
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::table('users', function (Blueprint $table) {
             $table->boolean('is_revisor')->default(false);
         });
     }
 
-    /**
+    /** 
      * Reverse the migrations.
+     * 
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(is_revisor);
+            $table->dropColumn('is_revisor');
         });
     }
 };

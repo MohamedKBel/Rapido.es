@@ -26,7 +26,7 @@ return new class extends Migration
     {
         Schema::table('ads', function (Blueprint $table) {
             $table->dropForeign(['category_id']);
-            $table->dropColumn(['category_id']);
+            $table->dropColumn('category_id');
         });
     }
 };
