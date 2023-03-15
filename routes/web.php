@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdController;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\RevisorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,5 +24,6 @@ Route::get('/category/{category:name}/ads',[PublicController::class,'adsByCatego
 
 Route::get('/ads/{ad}', [AdController::class,'show'])->name('ads.show');
 Route::get('/revisor',[RevisorController::class,'index'])->middleware('isRevisor')->name('revisor.home');
+Route::get('revisor/become',[RevisorController::class,'becomeRevisor'])->middleware('auth')->name('revisor.become');
 Route::patch('/revisor/ad/{ad}/accept',[RevisorController::class,'acceptAd'])->middleware('isRevisor')->name('revisor.ad.accept');
 Route::patch('/revisor/ad/{ad}/reject',[RevisorController::class,'rejectAd'])->middleware('isRevisor')->name('revisor.ad.reject');
