@@ -27,6 +27,8 @@
             <textarea wire:model="body" cols="30" rows="15" class="form-control"></textarea>
         </div>
 
+        
+
         <div class="my-3"> 
             <button type="submit" class="btn btn-info">Crear</button> 
         </div> 
