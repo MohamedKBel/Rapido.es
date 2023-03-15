@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Ad;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class RevisorController extends Controller
 {
@@ -22,5 +23,9 @@ class RevisorController extends Controller
         {
             $ad->setAccepted(false);
             return redirect()->back()->withMessage(['type' => 'danger','text'=>'Anuncio rechazado']);
+        }
+    public function becomeRevisor()
+        {
+            Mail::to('admin@rapido.es')
         }
 }
