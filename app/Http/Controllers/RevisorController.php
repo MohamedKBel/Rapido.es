@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Mail\BecomeRevisor;
 use App\Models\Ad;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class RevisorController extends Controller
@@ -26,6 +29,7 @@ class RevisorController extends Controller
         }
     public function becomeRevisor()
         {
-            Mail::to('admin@rapido.es')
+            Mail::to('admin@rapido.es')->send(new BecomeRevisor(Auth::user()));
+            return redirect()->route('home')->withMesssage(['type'=>'success','text'=>'Solicitud enviada con éxito, pronto sabrás algo, gracias!']);
         }
 }
