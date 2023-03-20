@@ -22,7 +22,8 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach ($categories as $category )
-                            <li><a class="dropdown-item" href="{{route('category.ads',$category)}}" >{{$category->name}}</a></li>
+                            <li><a class="dropdown-item" href="{{route('category.ads',$category)}}" >{{$category->name}}</a>
+                            </li>
                         @endforeach
                     </ul>
                 </li>
@@ -42,8 +43,9 @@
                         <li>
                             <a href="{{ route('ads.create')}}"class="btn">Nuevo anuncio</a>
                         </li>
+                    </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-target="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{Auth::user()->name}}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
