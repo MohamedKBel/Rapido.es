@@ -11,8 +11,9 @@
         <h1>Un usuario quiere trabajar con nosotros</h1>
         <h2>A continuación sus datos:</h2>
         <p><b>Nombre:</b>{{$user->name}}</p>
-        <p><b>Email:</b>{{$user}}</p>
-        <p></p>
+        <p><b>Email:</b>{{$user->email}}</p>
+        <p>Si quieres que haga parte de nuestro equipo pulse aquí</p>
+        <a href="{{route('revisor.make',$user)}}">Acepta Solicitud</a>
     </div>
 </body>
 </html>
