@@ -39,6 +39,7 @@
                     <a class="nav-link" href="{{route( 'register')}}"><span>Registrar</span></a>
                 </li>
                 @endif
+                @else
                 <li class="nav-item">
                 <li>
                     <a href="{{ route('ads.create')}}" class="btn">Nuevo anuncio</a>
@@ -66,23 +67,25 @@
                             </form>
                             <a id="logoutBtn" class="dropdown-item" href="#">Salir</a>
                         </li>
+                        @endguest
 
-                        <li class="nav-item">
-                            <x-locale lang="en" country="gb">
-                        </li>
-
-                        <li class="nav-item">
-                            <x-locale lang="it" country="it">
-
-                        </li>
-
-                        <li class="nav-item">
-                            <x-locale lang="es" country="es">
-                        </li>
-                        
                     </ul>
+
                 </li>
-                @endguest
+
+                <li class="nav-item">
+                    <x-locale lang="en" country="gb" />
+                </li>
+
+                <li class="nav-item">
+                    <x-locale lang="it" country="it" />
+
+                </li>
+
+                <li class="nav-item">
+                    <x-locale lang="es" country="es" />
+                </li>
+
             </ul>
         </div>
     </div>

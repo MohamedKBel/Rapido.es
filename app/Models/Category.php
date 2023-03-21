@@ -8,11 +8,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Category extends Model
 {
+    use HasFactory;
     protected $fillable = ['name'];
 
     public function ads()
     {
         return $this->hasMany(Ad::class);
     }
-    use HasFactory;
+    
 }
