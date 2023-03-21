@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg" style="background-color: #63e6c3;">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{route('home')}}">Rapido.es</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -17,33 +17,37 @@
                     <a class="nav-link active" href="#">Donde estamos</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
                         Categorias
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach ($categories as $category )
-                            <li><a class="dropdown-item" href="{{route('category.ads',$category)}}" >{{$category->name}}</a></li>
+                        <li><a class="dropdown-item" href="{{route('category.ads',$category)}}">{{$category->name}}</a>
+                        </li>
                         @endforeach
                     </ul>
                 </li>
                 @guest
-                    @if (Route::has ('login'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('login')}}"><span>Entrar</span></a>
-                    </li>
-                    @endif
-                    @if (Route::has('register'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route( 'register')}}"><span>Registrar</span></a>
-                    </li>
-                    @endif
-                    @else
-                    <li class="nav-item">
-                        <li>
-                            <a href="{{ route('ads.create')}}"class="btn">Nuevo anuncio</a>
-                        </li>
+                @if (Route::has ('login'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('login')}}"><span>Entrar</span></a>
+                </li>
+                @endif
+                @if (Route::has('register'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route( 'register')}}"><span>Registrar</span></a>
+                </li>
+                @endif
+                @else
+                <li class="nav-item">
+                <li>
+                    <a href="{{ route('ads.create')}}" class="btn">Nuevo anuncio</a>
+                </li>
+                </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-target="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
                         {{Auth::user()->name}}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -63,23 +67,25 @@
                             </form>
                             <a id="logoutBtn" class="dropdown-item" href="#">Salir</a>
                         </li>
-                         
-                        <li class="nav-item">
-                               <x-locale lang="en" country="gb"> 
-                        </li>
+                        @endguest
 
-                        <li class="nav-item"> 
-                            <x-locale lang="it" country="it"> 
- 
-                        </li>
-
-                        <li class="nav-item">   
-                            <x-locale lang="es" country="es"> 
-                        </li>
-                        
                     </ul>
+
                 </li>
-                @endguest
+
+                <li class="nav-item">
+                    <x-locale lang="en" country="gb" />
+                </li>
+
+                <li class="nav-item">
+                    <x-locale lang="it" country="it" />
+
+                </li>
+
+                <li class="nav-item">
+                    <x-locale lang="es" country="es" />
+                </li>
+
             </ul>
         </div>
     </div>
