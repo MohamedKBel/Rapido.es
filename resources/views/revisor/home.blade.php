@@ -1,17 +1,36 @@
 <x-layout>
-    <x-slot>Rapido- Revisor Home</x-slot>
+    <x-slot name='title'>Rapido- Revisor Home</x-slot>
 @if ($ad)
 <div class="container my-5 py-5">
     <div class="row">
         <div class="col-12 col-md-8 offset-md-2">
             <div class="card">
                 <div class="card-header">
-                    Anuncion #{{$ad->id}}
+                    {{__('Anuncio')}} #{{$ad->id}}
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-3">
-                            <b>Usuario</b>
+                            <b>{{__('Imágenes')}}</b>
+                        </div>
+                        <div class="col-9">
+                            <div class="row">
+                                @forelse ($ad->images as $image)
+                                <div class="col-md-4">
+                                    <img src="{{Storage::url($image->path)}}" alt="..." class="img-fluid">
+                                </div>
+                                @empty
+                                    <div class="col-12">
+                                        <b>{{__('No hay imáges')}}</b>
+                                    </div>
+                                @endforelse
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <b>{{__('Usuario')}}</b>
                         </div>
                         <div class="col-md-9">
                             #{{$ad->user->id}} - {{$ad->user->name}}->{{$ad->user->email}}
@@ -20,7 +39,7 @@
                     <hr>
                     <div class="row">
                         <div class="col-md-3">
-                            <b>Título</b>
+                            <b>{{__('Título')}}</b>
                         </div>
                         <div class="col-md-9">
                             {{$ad->title}}
@@ -29,7 +48,7 @@
                     <hr>
                     <div class="row">
                         <div class="col-md-3">
-                            <b>Precio</b>
+                            <b>{{__('Precio')}}</b>
                         </div>
                         <div class="col-md-9">
                             {{$ad->price}}
@@ -38,7 +57,7 @@
                     <hr>
                     <div class="row">
                         <div class="col-md-3">
-                            <b>Descripción</b>
+                            <b>{{__('Descripción')}}</b>
                         </div>
                         <div class="col-md-9">
                             {{$ad->body}}
@@ -47,7 +66,7 @@
                     <hr>
                     <div class="row">
                         <div class="col-md-3">
-                            <b>Categoría</b>
+                            <b>{{__('Categoría')}}</b>
                         </div>
                         <div class="col-md-9">
                             {{$ad->category->name}}
@@ -56,7 +75,7 @@
                     <hr>
                     <div class="row">
                         <div class="col-md-3">
-                            <b>Fecha de creación</b>
+                            <b>{{__('Fecha de creación')}}</b>
                         </div>
                         <div class="col-md-9">
                             {{$ad->created_at}}
@@ -84,6 +103,6 @@
     </div>
 </div>
 @else
-    <h3 class="text-center">No hay anuncios para revisar, vuelve más tarde, gracias</h3>
+    <h3 class="text-center">{{__('No hay anuncios para revisar, vuelve más tarde, gracias')}}</h3>
 @endif
 </x-layout>

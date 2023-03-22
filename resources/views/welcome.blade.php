@@ -10,7 +10,8 @@
             @forelse ($ads as $ad)
                 <div class="col-12 col-md-4">
                     <div class="card mb-5">
-                        <img src="http://via.placeholder.com/150" class='card_img-top' alt="...">
+                        <img src="{{!$ad->images()->get()->isEmpty() ? Storage::url($ad->images()->first()->path) : 'http://via.placeholder.com/150'}}" alt="" class="card-img-top">
+                        
                         <div class="card-body">
                             <h5 class="card-title">{{$ad->title}}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">{{$ad->price}}</h6>
