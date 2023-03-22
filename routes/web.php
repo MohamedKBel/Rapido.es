@@ -28,4 +28,4 @@ Route::get('revisor/become',[RevisorController::class,'becomeRevisor'])->middlew
 Route::get('revisor/{user/make',[RevisorController::class,'makeRevisor'])->middleware('auth')->name('revisor.make');
 Route::patch('/revisor/ad/{ad}/accept',[RevisorController::class,'acceptAd'])->middleware('isRevisor')->name('revisor.ad.accept');
 Route::patch('/revisor/ad/{ad}/reject',[RevisorController::class,'rejectAd'])->middleware('isRevisor')->name('revisor.ad.reject');
-Route::post('/locale/{locale}', [RevisorController::class,'setLocale'])->name('locale.set');
+Route::post('/locale/{locale}', [PublicController::class,'setLocale'])->name('locale.set');
